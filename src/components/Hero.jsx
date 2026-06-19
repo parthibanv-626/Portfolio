@@ -157,7 +157,7 @@ const Hero = () => {
               <span className="btn-text">View my work</span>
               <span className="btn-icon"><ArrowRight size={18} /></span>
             </a>
-            <a href="https://drive.google.com/file/d/1EubBWqAohVFNnhm6S_iaElRivlw3bUmV/view?usp=drive_link" target="_blank" rel="noopener noreferrer" className="btn btn-outline font-mono">
+            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="btn btn-outline font-mono">
               <span className="btn-icon-left"><Download size={16} /></span>
               <span className="btn-text">Resume</span>
             </a>
