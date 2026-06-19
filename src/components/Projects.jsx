@@ -25,13 +25,13 @@ const Projects = () => {
       color: '--accent-4',
     },
     {
-      title: 'Portfolio Design Concept',
-      stream: 'UI/UX Design',
-      description: 'An exploration of modern glassmorphism and cyberpunk themes for developer portfolios. Focuses heavily on typography, color theory, and advanced CSS Grid layouts.',
-      techStack: ['Figma', 'HTML/CSS', 'Vanilla JS'],
-      github: '#',
+      title: 'Portfolio',
+      stream: 'Web Development',
+      description: 'A premium, highly interactive portfolio website built using React, Framer Motion, and CSS Custom Properties. Features interactive glassmorphism components, dark/light theme options, and custom micro-animations.',
+      techStack: ['React', 'Vite', 'CSS3'],
+      github: 'https://github.com/parthibanv-626/Portfolio.git',
       external: '#',
-      color: '--accent-3',
+      color: '--accent-2',
     }
   ];
 
