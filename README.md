@@ -13,10 +13,4 @@ Welcome to my personal portfolio website! This project showcases my skills, expe
 *   **About Me & Skills:** A brief introduction to who I am and the technologies I work with.
 *   **Contact Form:** A way for recruiters and clients to get in touch with me.
 
-## 📦 Installation & Setup
 
-If you want to run this project locally, follow these steps:
-
-1. **Clone the repository:**
-```bash
-   git clone [https://github.com/parthibanv-626/Portfolio.git](https://github.com/parthibanv-626/Portfolio.git)
