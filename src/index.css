@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Sora:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  /* ─── Light Mode — Premium Indigo & Violet Glow ─── */
+  --bg-primary: #f8fafc;
+  --bg-secondary: #f1f5f9;
+  --bg-elevated: #ffffff;
+  --bg-glass: rgba(255, 255, 255, 0.85);
+  --bg-glass-hover: rgba(255, 255, 255, 0.98);
+  --bg-card: #ffffff;
+
+  /* ─── Accent System — Royal Indigo & Violet ─── */
+  --accent-1: #4f46e5;
+  --accent-2: #7c3aed;
+  --accent-3: #2563eb;
+  --accent-4: #0d9488;
+  --accent-5: #db2777;
+  --gradient-primary: linear-gradient(135deg, #4f46e5 0%, #a855f7 100%);
+  --gradient-warm: linear-gradient(135deg, #ff7e5f 0%, #feb47b 100%);
+  --gradient-cool: linear-gradient(135deg, #2af598 0%, #009efd 100%);
+  --glow-primary: rgba(79, 70, 229, 0.03);
+  --glow-strong: rgba(79, 70, 229, 0.08);
+
+  /* ─── Text ─── */
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+
+  /* ─── Borders ─── */
+  --border-subtle: rgba(79, 70, 229, 0.06);
+  --border-medium: rgba(79, 70, 229, 0.12);
+  --border-strong: rgba(79, 70, 229, 0.22);
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+  --radius-pill: 9999px;
+
+  /* ─── Fonts ─── */
+  --font-display: 'Sora', sans-serif;
+  --font-body: 'Space Grotesk', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* ─── Shadows ─── */
+  --shadow-sm: 0 4px 12px rgba(79, 70, 229, 0.03);
+  --shadow-md: 0 12px 36px rgba(79, 70, 229, 0.06);
+  --shadow-lg: 0 24px 60px rgba(79, 70, 229, 0.1);
+  --shadow-glow: 0 0 50px rgba(79, 70, 229, 0.05);
+  --shadow-glow-strong: 0 12px 40px rgba(79, 70, 229, 0.12);
+
+  /* ─── Motion ─── */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --duration-fast: 0.2s;
+  --duration-normal: 0.35s;
+  --duration-slow: 0.6s;
+}
+
+[data-theme='dark'] {
+  /* ─── Dark Mode — Deep Luxury Obsidian ─── */
+  --bg-primary: #08080a;
+  --bg-secondary: #101012;
+  --bg-elevated: #161619;
+  --bg-glass: rgba(8, 8, 10, 0.85);
+  --bg-glass-hover: rgba(16, 16, 18, 0.96);
+  --bg-card: #101013;
+
+  --accent-1: #ffffff;
+  --accent-2: #f4f4f5;
+  --accent-3: #e4e4e7;
+  --accent-4: #a1a1aa;
+  --accent-5: #71717a;
+  --gradient-primary: linear-gradient(135deg, #ffffff 0%, #71717a 100%);
+  --gradient-warm: linear-gradient(135deg, #ffffff, #a1a1aa);
+  --gradient-cool: linear-gradient(135deg, #f4f4f5, #71717a);
+  --glow-primary: rgba(255, 255, 255, 0.02);
+  --glow-strong: rgba(255, 255, 255, 0.05);
+
+  --text-primary: #f4f4f5;
+  --text-secondary: #a1a1aa;
+  --text-muted: #52525b;
+
+  --border-subtle: rgba(255, 255, 255, 0.05);
+  --border-medium: rgba(255, 255, 255, 0.09);
+  --border-strong: rgba(255, 255, 255, 0.16);
+
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 12px 30px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 24px 50px rgba(0, 0, 0, 0.6);
+  --shadow-glow: 0 0 50px rgba(255, 255, 255, 0.01);
+  --shadow-glow-strong: 0 12px 40px rgba(255, 255, 255, 0.03);
+}
+
+/* ═══════════════════════════════
+   RESET
+   ═══════════════════════════════ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: var(--font-body);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  scroll-behavior: smooth;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ═══════════════════════════════
+   TYPOGRAPHY
+   ═══════════════════════════════ */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--text-primary);
+  letter-spacing: -0.03em;
+}
+
+p { color: var(--text-secondary); line-height: 1.75; }
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--duration-fast) var(--ease-out);
+}
+
+button {
+  font-family: inherit;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+/* ═══════════════════════════════
+   UTILITIES
+   ═══════════════════════════════ */
+.container {
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .container { padding: 0 3rem; }
+}
+
+.font-mono { font-family: var(--font-mono); }
+.font-display { font-family: var(--font-display); }
+
+.text-gradient {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.nav-number {
+  color: var(--accent-1);
+  font-family: var(--font-mono);
+  font-weight: 600;
+  opacity: 0.4;
+}
+
+.glass-panel {
+  background: var(--bg-glass);
+  backdrop-filter: blur(20px) saturate(1.4);
+  -webkit-backdrop-filter: blur(20px) saturate(1.4);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+}
+
+/* ═══════════════════════════════
+   SECTION HEADINGS
+   ═══════════════════════════════ */
+.section-heading {
+  margin-bottom: 3.5rem;
+}
+
+.section-heading .section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 0.75rem;
+}
+
+.section-heading .section-label::before {
+  content: '';
+  display: inline-block;
+  width: 24px;
+  height: 1px;
+  background: var(--text-muted);
+  border-radius: 1px;
+}
+
+.section-heading h2 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
+
+/* ═══════════════════════════════
+   SELECTION & SCROLLBAR
+   ═══════════════════════════════ */
+::selection {
+  background: var(--text-primary);
+  color: var(--bg-primary);
+}
+
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--bg-secondary); }
+::-webkit-scrollbar-thumb { background: var(--text-muted); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--text-secondary); }
+
+/* ═══════════════════════════════
+   APP CONTAINER
+   ═══════════════════════════════ */
+.app-container {
+  position: relative;
+}

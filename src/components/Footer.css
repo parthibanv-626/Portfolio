@@ -1,0 +1,54 @@
+/* ═══════════════════════════════
+   FOOTER
+   ═══════════════════════════════ */
+.footer {
+  padding: 0 0 3rem;
+  margin-top: 4rem;
+}
+
+.footer-divider {
+  width: 100%;
+  height: 1px;
+  background: var(--border-subtle);
+  margin-bottom: 2.5rem;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.footer-social {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.footer-social a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border-medium);
+  background: var(--bg-elevated);
+  color: var(--text-secondary);
+  transition: all var(--duration-normal) var(--ease-out);
+  box-shadow: var(--shadow-sm);
+}
+
+.footer-social a:hover {
+  color: var(--accent-1);
+  border-color: var(--accent-1);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.footer-credit {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+  font-family: var(--font-mono);
+}

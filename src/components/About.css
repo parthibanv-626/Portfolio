@@ -1,0 +1,247 @@
+/* ═══════════════════════════════
+   ABOUT SECTION
+   ═══════════════════════════════ */
+.about-section {
+  padding: 120px 0;
+  max-width: 1000px;
+  position: relative;
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.about-text p {
+  color: var(--text-secondary);
+  margin-bottom: 1.25rem;
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+/* ─── Skills Tag System ─── */
+.skills-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
+  margin-top: 2.5rem;
+  padding: 1.5rem;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.skills-column h3 {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.skill-tag {
+  font-size: 0.72rem;
+  color: var(--text-secondary);
+  padding: 0.4rem 0.8rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  cursor: default;
+  transition: all var(--duration-fast) var(--ease-out);
+}
+
+.skill-tag:hover {
+  color: var(--text-primary);
+  border-color: var(--border-strong);
+  background: var(--bg-elevated);
+  box-shadow: var(--shadow-sm);
+}
+
+/* ─── Visual Code Mockup Card ─── */
+.about-visual {
+  display: flex;
+  justify-content: center;
+}
+
+.visual-card {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.visual-card::before {
+  content: '';
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  background: var(--gradient-primary);
+  filter: blur(50px);
+  opacity: 0.15;
+  border-radius: 50%;
+  z-index: 1;
+  pointer-events: none;
+  transition: all var(--duration-normal) var(--ease-out);
+}
+
+.visual-card:hover::before {
+  transform: scale(1.1);
+  opacity: 0.22;
+}
+
+.visual-inner {
+  width: 260px;
+  height: 200px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 2;
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  transition: all var(--duration-normal) var(--ease-out);
+}
+
+.visual-inner:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* ─── IDE Window Styles ─── */
+.window-header {
+  height: 32px;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0 0.8rem;
+}
+
+.window-header .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.window-header .dot-red { background: #ff5f56; }
+.window-header .dot-yellow { background: #ffbd2e; }
+.window-header .dot-green { background: #27c93f; }
+
+.window-body {
+  padding: 1.25rem;
+  font-size: 0.76rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.code-line {
+  white-space: nowrap;
+}
+
+.code-line.indent {
+  padding-left: 1.25rem;
+}
+
+/* Code Syntax Colors */
+.keyword { color: #6366f1; font-weight: 600; }
+.variable { color: var(--text-primary); }
+.property { color: #2563eb; }
+.string { color: #10b981; }
+
+[data-theme='dark'] .property { color: #38bdf8; }
+[data-theme='dark'] .keyword { color: #a5b4fc; }
+[data-theme='dark'] .string { color: #34d399; }
+
+
+/* ─── Responsive ─── */
+@media (max-width: 768px) {
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .about-visual {
+    order: -1;
+    margin-bottom: 1rem;
+  }
+
+  .visual-card {
+    width: 240px;
+    height: 240px;
+  }
+
+  .visual-inner {
+    width: 220px;
+    height: 170px;
+  }
+
+  .skills-container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+/* ─── Typing Blinking Cursor ─── */
+.typing-cursor {
+  display: inline-block;
+  width: 2px;
+  background: var(--text-primary);
+  margin-left: 2px;
+  animation: blinkCursor 0.8s step-end infinite;
+  vertical-align: middle;
+}
+
+@keyframes blinkCursor {
+  from, to { background-color: transparent }
+  50% { background-color: var(--text-primary) }
+}
+
+/* ─── Terminal Input ─── */
+.terminal-input-line {
+  display: flex;
+  align-items: center;
+  margin-top: 0.25rem;
+}
+
+.terminal-prompt {
+  color: #10b981;
+  margin-right: 0.5rem;
+  font-weight: 600;
+}
+
+[data-theme='dark'] .terminal-prompt {
+  color: #34d399;
+}
+
+.terminal-input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  font-size: inherit;
+  flex-grow: 1;
+  padding: 0;
+  caret-color: var(--text-primary);
+}

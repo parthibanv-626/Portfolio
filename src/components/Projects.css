@@ -1,0 +1,133 @@
+/* ═══════════════════════════════
+   PROJECTS SECTION
+   ═══════════════════════════════ */
+.projects-section {
+  padding: 120px 0;
+  position: relative;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+/* ─── Project Card ─── */
+.project-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 2.25rem 2rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--duration-normal) var(--ease-out);
+  overflow: hidden;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--accent-3);
+  box-shadow: var(--shadow-lg);
+}
+
+/* ─── Card Header ─── */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.75rem;
+}
+
+.card-folder-icon {
+  color: var(--accent-3);
+  opacity: 0.85;
+}
+
+.card-links {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.card-links a {
+  color: var(--text-muted);
+  transition: all var(--duration-fast) var(--ease-out);
+  padding: 0.2rem;
+}
+
+.card-links a:hover {
+  color: var(--accent-1);
+  transform: translateY(-1.5px);
+}
+
+/* ─── Card Content ─── */
+.card-role {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.card-title {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+  line-height: 1.35;
+  transition: color var(--duration-fast) var(--ease-out);
+}
+
+.project-card:hover .card-title {
+  color: var(--accent-1);
+}
+
+.card-desc {
+  color: var(--text-secondary);
+  font-size: 0.92rem;
+  line-height: 1.65;
+  margin-bottom: 1.75rem;
+  flex-grow: 1;
+}
+
+/* ─── Tech Tags ─── */
+.card-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  list-style: none;
+  padding: 0;
+  margin-top: auto;
+}
+
+.card-tech li {
+  font-size: 0.68rem;
+  color: var(--text-secondary);
+  padding: 0.3rem 0.7rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-pill);
+  letter-spacing: 0.02em;
+  transition: all var(--duration-fast) var(--ease-out);
+}
+
+.project-card:hover .card-tech li {
+  border-color: var(--border-medium);
+}
+
+.card-tech li:hover {
+  border-color: var(--accent-1) !important;
+  color: var(--text-primary);
+  background: var(--bg-elevated);
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+}

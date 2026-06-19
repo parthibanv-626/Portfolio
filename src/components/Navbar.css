@@ -1,0 +1,207 @@
+/* ═══════════════════════════════
+   NAVBAR
+   ═══════════════════════════════ */
+.navbar-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  transition: all var(--duration-normal) var(--ease-out);
+  padding: 1.5rem 0;
+}
+
+.navbar-header.scrolled {
+  padding: 0.8rem 0;
+  background: var(--bg-glass);
+  backdrop-filter: blur(20px) saturate(1.4);
+  -webkit-backdrop-filter: blur(20px) saturate(1.4);
+  border-bottom: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-sm);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ─── Logo ─── */
+.logo {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.logo a {
+  color: var(--text-primary);
+  transition: opacity var(--duration-fast);
+}
+
+.logo a:hover {
+  opacity: 0.8;
+}
+
+/* ─── Nav Links ─── */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-item {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  position: relative;
+  padding: 0.4rem 0;
+  transition: color var(--duration-normal) var(--ease-out);
+  letter-spacing: 0.02em;
+}
+
+.nav-item::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 0;
+  height: 1.5px;
+  background: var(--accent-1);
+  transition: width var(--duration-normal) var(--ease-out);
+}
+
+.nav-item:hover {
+  color: var(--text-primary);
+}
+
+.nav-item:hover::after {
+  width: 100%;
+}
+
+.nav-number {
+  color: var(--text-muted);
+  font-size: 0.75em;
+  margin-right: 0.35rem;
+  font-weight: 500;
+}
+
+/* ─── Resume Button ─── */
+.resume-btn {
+  padding: 0.5rem 1.25rem;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--bg-elevated);
+  background: var(--accent-1);
+  border: 1px solid var(--accent-1);
+  border-radius: var(--radius-pill);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  overflow: hidden;
+}
+
+.resume-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.6s ease;
+}
+
+.resume-btn:hover::before {
+  left: 100%;
+}
+
+.resume-btn:hover {
+  background: transparent;
+  color: var(--text-primary);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 10px 20px -5px var(--accent-1);
+}
+
+/* ─── Theme Toggle ─── */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border-medium);
+  background: var(--bg-elevated);
+  transition: all var(--duration-normal) var(--ease-out);
+  color: var(--text-secondary);
+  box-shadow: var(--shadow-sm);
+}
+
+.theme-toggle:hover {
+  border-color: var(--accent-1);
+  color: var(--text-primary);
+  transform: rotate(15deg) translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+/* ─── Mobile Layout ─── */
+.mobile-toggle {
+  display: none;
+  cursor: pointer;
+  color: var(--text-primary);
+  padding: 0.25rem;
+  transition: opacity var(--duration-fast);
+}
+
+.mobile-toggle:hover {
+  opacity: 0.8;
+}
+
+.mobile-menu {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .desktop-nav {
+    display: none;
+  }
+  
+  .mobile-toggle {
+    display: block;
+  }
+
+  .mobile-menu {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    right: 1.5rem;
+    left: 1.5rem;
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    background: var(--bg-glass);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid var(--border-subtle);
+    z-index: 101;
+  }
+
+  .mobile-nav-item {
+    margin-bottom: 1.25rem;
+    font-size: 0.95rem;
+    text-align: center;
+    color: var(--text-secondary);
+    font-weight: 500;
+  }
+
+  .mobile-nav-item:hover {
+    color: var(--text-primary);
+  }
+
+  .mobile-menu .resume-btn {
+    text-align: center;
+    margin-top: 0.5rem;
+    padding: 0.75rem;
+  }
+}

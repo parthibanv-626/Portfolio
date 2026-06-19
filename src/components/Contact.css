@@ -1,0 +1,89 @@
+/* ═══════════════════════════════
+   CONTACT SECTION
+   ═══════════════════════════════ */
+.contact-section {
+  padding: 140px 0 100px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.contact-inner {
+  text-align: center;
+  max-width: 580px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ─── Contact Badge ─── */
+.contact-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 1.5rem;
+  padding: 0.45rem 1.15rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-pill);
+  font-family: var(--font-mono);
+}
+
+.contact-badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent-1);
+  animation: contactPulse 2.5s ease-in-out infinite;
+}
+
+@keyframes contactPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.3; transform: scale(1.15); }
+}
+
+/* ─── Contact Title ─── */
+.contact-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  color: var(--text-primary);
+}
+
+/* ─── Description ─── */
+.contact-desc {
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  line-height: 1.75;
+  margin-bottom: 2.75rem;
+}
+
+/* ─── Large Button Modifier ─── */
+.btn-lg {
+  padding: 0.95rem 2.5rem;
+  font-size: 0.95rem;
+}
+
+/* ─── CTAs Flex Container ─── */
+.contact-ctas {
+  display: flex;
+  justify-content: center;
+  gap: 1.25rem;
+  width: 100%;
+}
+
+@media (max-width: 640px) {
+  .contact-ctas {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.85rem;
+  }
+}

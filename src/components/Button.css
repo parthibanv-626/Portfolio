@@ -1,0 +1,121 @@
+/* ═══════════════════════════════
+   BUTTONS — Minimal Luxury CTA System
+   ═══════════════════════════════ */
+
+/* ─── Base Button Style ─── */
+.btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.6rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.84rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  overflow: hidden;
+  text-decoration: none;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  isolation: isolate;
+  font-family: var(--font-mono);
+  border: 1px solid transparent;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.6s ease;
+  z-index: 1;
+}
+
+.btn:hover::before {
+  left: 100%;
+}
+
+/* ─── Primary (Solid Accent) ─── */
+.btn-primary {
+  background: var(--accent-1);
+  color: var(--bg-elevated);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--accent-1);
+}
+
+.btn-primary:hover {
+  background: transparent;
+  color: var(--text-primary);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 10px 20px -5px var(--accent-1);
+}
+
+.btn-primary:active {
+  transform: translateY(-0.5px);
+}
+
+.btn-primary .btn-icon {
+  display: flex;
+  align-items: center;
+  transition: transform var(--duration-normal) var(--ease-spring);
+  position: relative;
+  z-index: 2;
+}
+
+.btn-primary:hover .btn-icon {
+  transform: translateX(3px) translateY(-1px);
+}
+
+/* ─── Outline Style ─── */
+.btn-outline {
+  background: transparent;
+  color: var(--text-primary);
+  border: 1px solid var(--border-medium);
+}
+
+.btn-outline:hover {
+  border-color: var(--accent-1);
+  background: transparent;
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 10px 20px -5px var(--accent-1);
+}
+
+.btn-outline:active {
+  transform: translateY(-0.5px);
+}
+
+.btn-outline .btn-icon-left {
+  display: flex;
+  align-items: center;
+  opacity: 0.7;
+  position: relative;
+  z-index: 2;
+}
+
+.btn-outline:hover .btn-icon-left {
+  opacity: 1;
+}
+
+/* ─── Large Button Modifier (Contact CTA) ─── */
+.btn-lg {
+  padding: 0.9rem 2.2rem;
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+}
+
+/* ─── Button Content Wrapper ─── */
+.btn-content {
+  position: relative;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-glow, .btn-shine {
+  display: none; /* Removed for cleaner minimal aesthetic */
+}
