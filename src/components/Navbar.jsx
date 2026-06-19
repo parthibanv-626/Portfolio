@@ -58,7 +58,7 @@ const Navbar = ({ theme, toggleTheme }) => {
             </motion.a>
           ))}
           <motion.a 
-            href="/resume.pdf"
+            href={`${import.meta.env.BASE_URL}resume.pdf`}
             target="_blank"
             rel="noopener noreferrer"
             className="resume-btn font-mono"
@@ -100,7 +100,7 @@ const Navbar = ({ theme, toggleTheme }) => {
               <span className="nav-number">0{i + 1}.</span> {link.name}
             </a>
           ))}
-          <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="resume-btn font-mono" style={{ marginTop: '1rem', display: 'inline-block' }}>
+          <a href={`${import.meta.env.BASE_URL}resume.pdf`} target="_blank" rel="noopener noreferrer" className="resume-btn font-mono" style={{ marginTop: '1rem', display: 'inline-block' }}>
             Resume
           </a>
         </div>

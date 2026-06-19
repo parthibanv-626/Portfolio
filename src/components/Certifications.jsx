@@ -102,7 +102,7 @@ const Certifications = () => {
           {duplicatedCerts.map((cert, index) => (
             <a 
               key={index} 
-              href={cert.file} 
+              href={`${import.meta.env.BASE_URL}${cert.file.startsWith('/') ? cert.file.slice(1) : cert.file}`} 
               target="_blank" 
               rel="noopener noreferrer" 
               className="cert-card"
