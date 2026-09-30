@@ -60,10 +60,10 @@ const Certifications = () => {
       file: "/Certificates/Meenakshi_Sundararajan_College.jpg"
     },
     { 
-      title: "Intermediate Typing Certification", 
-      issuer: "typing.com", 
-      date: "2024",
-      file: "/Certificates/Type_Intermediate.pdf"
+      title: "MYSQL Certification", 
+      issuer: "GUVI & HCL", 
+      date: "2026",
+      file: "/Certificates/MYSQL.png"
     },
     { 
       title: "UI / UX for Beginners", 
