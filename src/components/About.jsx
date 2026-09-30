@@ -3,7 +3,7 @@ import { motion, useInView } from 'framer-motion';
 import './About.css';
 
 const About = () => {
-  const engineeringSkills = ['Python', 'HTML/CSS', 'MY SQL', 'C', 'JAVASCRIPT'];
+  const engineeringSkills = ['Python', 'HTML/CSS', 'MY SQL', 'C', 'JAVASCRIPT','POSTGRESQL'];
   const designSkills = ['Figma', 'Adobe XD', 'Canva', 'User Research'];
   const otherSkills = ['Git and Github', 'MS Office Tools'];
 
